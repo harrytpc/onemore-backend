@@ -1,5 +1,8 @@
 package com.onemore.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public enum InvitationStatusEnum {
 	
 	INVITED(1, "Convidado"),
@@ -33,5 +36,32 @@ public enum InvitationStatusEnum {
 			}
 		}
 		return null;
+	}
+	
+	public static List<InvitationStatusEnum> getConfirmedStatus(){
+		List<InvitationStatusEnum> confirmedList = new ArrayList<InvitationStatusEnum>();
+		confirmedList.add(InvitationStatusEnum.ACCEPTED_BY_OWNER);
+		confirmedList.add(InvitationStatusEnum.ACCEPTED_BY_USER);
+		return confirmedList;
+	}
+	
+	public static List<InvitationStatusEnum> getPendingApprovalStatus(){
+		List<InvitationStatusEnum> pendingList = new ArrayList<InvitationStatusEnum>();
+		pendingList.add(InvitationStatusEnum.REQUESTED);
+		return pendingList;
+	}
+	
+	public static List<InvitationStatusEnum> getInvitedsStatus(){
+		List<InvitationStatusEnum> pendingList = new ArrayList<InvitationStatusEnum>();
+		pendingList.add(InvitationStatusEnum.INVITED);
+		return pendingList;
+	}
+	
+	public static List<InvitationStatusEnum> getDeclinedStatus(){
+		List<InvitationStatusEnum> declinedList = new ArrayList<InvitationStatusEnum>();
+		declinedList.add(InvitationStatusEnum.DECLINED_BY_OWNER);
+		declinedList.add(InvitationStatusEnum.DECLINED_BY_USER);
+		
+		return declinedList;
 	}
 }

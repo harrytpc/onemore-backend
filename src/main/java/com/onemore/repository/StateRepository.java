@@ -8,7 +8,8 @@ import com.onemore.model.State;
 public interface StateRepository extends CrudRepository<State, Long>{
 
     State findById(Long stateId);
-    Iterable<State> findByCountry(Country state);
+    
+    Iterable<State> findByCountryOrderByNameAsc(Country state);
 	
 }
 

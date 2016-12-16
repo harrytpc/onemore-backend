@@ -32,8 +32,8 @@ public class CountryRest {
 		return countryBO.findCountryById(countryId);
 	}
 	
-	@RequestMapping(value = "/{countryId}/cities", method = RequestMethod.GET)
-    public Iterable<State> getStatesByCountryById(@PathVariable Long countryId) {
+	@RequestMapping(value = "/{countryId}/states", method = RequestMethod.GET)
+    public Iterable<State> getStatesByCountryId(@PathVariable Long countryId) {
 		return stateBO.findStatesByCountryId(countryId);
 	}
 	

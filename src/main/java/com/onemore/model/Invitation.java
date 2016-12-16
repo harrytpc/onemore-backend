@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.onemore.converter.InvitationStatusEnumConverter;
 import com.onemore.converter.InvitationTypeEnumConverter;
 
@@ -21,15 +22,18 @@ public class Invitation {
 	private Long id;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
+	@JsonManagedReference
 	private Event event;
 	
 	@Convert( converter=InvitationTypeEnumConverter.class )
 	private InvitationTypeEnum type;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.LAZY)
+//	@JsonBackReference
 	private User owner;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.LAZY)
+//	@JsonBackReference
 	private User player;
 	
 //    @Temporal(TemporalType.DATE)

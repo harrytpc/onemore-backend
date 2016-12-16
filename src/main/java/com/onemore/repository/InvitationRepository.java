@@ -10,7 +10,7 @@ import com.onemore.model.Event;
 import com.onemore.model.Invitation;
 import com.onemore.model.InvitationStatusEnum;
 
-public interface InvitationRepository extends CrudRepository<Invitation, Long>{
+public interface InvitationRepository extends CrudRepository<Invitation, Long>, InvitationRepositoryCustom{
 
 	
 	@Query("select i from Invitation i where i.status = :status and i.event.id = :eventId")

@@ -8,7 +8,7 @@ import org.springframework.data.repository.query.Param;
 
 import com.onemore.model.Event;
 
-public interface EventRepository extends CrudRepository<Event, Long>{
+public interface EventRepository extends CrudRepository<Event, Long>, EventRepositoryCustom{
 
 	@Query("select e from Event e where e.owner.id = :userId")
 	public List<Event> findEventsByUserOwnerId(@Param("userId") Long userId);

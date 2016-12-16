@@ -14,6 +14,7 @@ public class Modality {
 	private String initials;
 	private String name;
 	private String image;
+	private String color;
 	
 	public Long getId() {
 		return id;
@@ -38,6 +39,12 @@ public class Modality {
 	}
 	public void setImage(String image) {
 		this.image = image;
+	}
+	public String getColor() {
+		return color;
+	}
+	public void setColor(String color) {
+		this.color = color;
 	}
 	
 }

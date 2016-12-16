@@ -17,7 +17,6 @@ public class City {
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 //	@JsonBackReference
-//	@JsonView
 	private State state;
 	
 	public Long getId() {

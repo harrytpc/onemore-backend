@@ -27,6 +27,6 @@ public class StateBO {
     
     public Iterable<State> findStatesByCountryId(Long countryId) {
         Country country = countryRepository.findOne(countryId); 
-    	return stateRepository.findByCountry(country);
+    	return stateRepository.findByCountryOrderByNameAsc(country);
     }
 }
